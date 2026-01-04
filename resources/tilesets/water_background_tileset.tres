@@ -1,0 +1,12 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://bcxaqx0rynnrb"]
+
+[ext_resource type="Texture2D" uid="uid://cnx2sgcd01nf4" path="res://assets/environment/tilesheets/Water Background color.png" id="1_kc50a"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l7k6b"]
+texture = ExtResource("1_kc50a")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[resource]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_l7k6b")

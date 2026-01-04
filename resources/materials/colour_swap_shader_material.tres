@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://deuyjkwm8n5rx"]
+
+[ext_resource type="Shader" uid="uid://c7gdsjt5aoott" path="res://resources/shaders/colour_swap.gdshader" id="1_ljlki"]
+
+[resource]
+shader = ExtResource("1_ljlki")
+shader_parameter/enable_color_1 = true
+shader_parameter/old_color_1 = Color(0.28235295, 0.34509805, 0.5176471, 1)
+shader_parameter/new_color_1 = Color(0.7058824, 0.13725491, 0.07450981, 1)
+shader_parameter/enable_color_2 = true
+shader_parameter/old_color_2 = Color(0.27450982, 0.5921569, 0.6745098, 1)
+shader_parameter/new_color_2 = Color(0.95686275, 0.40784314, 0.043137256, 1)
+shader_parameter/tolerance = 0.1
