@@ -10,10 +10,14 @@ config_version=5
 
 [application]
 
-config/name="GDC_RPG_Essentials_Starter-Kit"
+config/name="Greyhawk Swords"
 run/main_scene="uid://bouda38hrvsyv"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
+
+[dotnet]
+
+project/assembly_name="GDC_RPG_Essentials_Starter-Kit"
 
 [input]
 
