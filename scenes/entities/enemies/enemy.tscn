@@ -1,9 +1,9 @@
-[gd_scene load_steps=26 format=3 uid="uid://624ouho8f7y2"]
+[gd_scene load_steps=26 format=3 uid="uid://cy7c5gqf37p8t"]
 
-[ext_resource type="Texture2D" uid="uid://pjsg6mn6xffn" path="res://assets/sprites/player/Warrior_Blue.png" id="1_1hmtu"]
-[ext_resource type="Script" uid="uid://03p7yosw83m7" path="res://scenes/entities/player/player.gd" id="1_635qg"]
+[ext_resource type="Script" uid="uid://cxbd6oqb5d1m5" path="res://scenes/entities/enemies/enemy.gd" id="1_c8ylr"]
+[ext_resource type="Texture2D" uid="uid://pjsg6mn6xffn" path="res://assets/sprites/player/Warrior_Blue.png" id="3_23bjx"]
 
-[sub_resource type="Shader" id="Shader_635qg"]
+[sub_resource type="Shader" id="Shader_essrt"]
 code = "// Color Replacement
 
 shader_type canvas_item;
@@ -32,14 +32,14 @@ void fragment() {
 	COLOR = color;
 }"
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_58kc7"]
-shader = SubResource("Shader_635qg")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c8ylr"]
+shader = SubResource("Shader_essrt")
 shader_parameter/enable_color_1 = true
 shader_parameter/old_color_1 = Color(0.28235295, 0.34509805, 0.5176471, 1)
-shader_parameter/new_color_1 = Color(0.64705884, 0.1882353, 0.1882353, 1)
+shader_parameter/new_color_1 = Color(0.22352941, 0.2901961, 0.3137255, 1)
 shader_parameter/enable_color_2 = true
 shader_parameter/old_color_2 = Color(0.27450982, 0.5921569, 0.6745098, 1)
-shader_parameter/new_color_2 = Color(0.8117647, 0.34117648, 0.23529412, 1)
+shader_parameter/new_color_2 = Color(0.34117648, 0.44705883, 0.46666667, 1)
 shader_parameter/tolerance = 0.1
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1hmtu"]
@@ -282,16 +282,16 @@ height = 74.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_635qg"]
 size = Vector2(10, 46)
 
-[node name="Player" type="CharacterBody2D" groups=["player"]]
+[node name="Enemy" type="CharacterBody2D" groups=["player"]]
 collision_layer = 3
 collision_mask = 3
-script = ExtResource("1_635qg")
+script = ExtResource("1_c8ylr")
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-material = SubResource("ShaderMaterial_58kc7")
+material = SubResource("ShaderMaterial_c8ylr")
 position = Vector2(0, -32)
-texture = ExtResource("1_1hmtu")
+texture = ExtResource("3_23bjx")
 hframes = 8
 vframes = 5
 
@@ -314,7 +314,7 @@ tree_root = SubResource("AnimationNodeStateMachine_bj7e2")
 anim_player = NodePath("../AnimationPlayer")
 
 [node name="HurtBox" type="Area2D" parent="."]
-collision_layer = 32
+collision_layer = 16
 collision_mask = 0
 input_pickable = false
 monitoring = false
@@ -328,7 +328,7 @@ debug_color = Color(0.95717055, 3.5616756e-06, 0.53661513, 0.41960785)
 position = Vector2(6, -62)
 rotation = -0.5934119
 collision_layer = 0
-collision_mask = 16
+collision_mask = 32
 input_pickable = false
 monitoring = false
 monitorable = false
